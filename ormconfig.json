@@ -2,9 +2,9 @@
     "type": "postgres",
     "host": "localhost", 
     "port": 5432,
-    "username": "docker",
+    "username": "space",
     "password": "docker",
-    "database": "rentx", 
+    "database": "space", 
     "migrations": ["./src/shared/infra/database/migrations/*.ts"],
     "entities": ["./src/modules/**/entities/*.ts"],
     "cli": {

@@ -3,14 +3,14 @@ version: "3"
 services:
   database: 
     image: postgres
-    container_name: database_ignite
+    container_name: database_space
     restart: always
     ports: 
       - 5432:5432
     environment:
-      - POSTGRES_USER=docker
+      - POSTGRES_USER=space
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=rentx
+      - POSTGRES_DB=space
     volumes:
       - pgdata:/data/postgres
 
@@ -24,7 +24,7 @@ services:
 
   #app:
   #  build: .
-  #  container_name: rentx
+  #  container_name: space
   #  restart: always
   #  ports: 
   #    - 3333:3333
