@@ -1,5 +1,4 @@
 import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../../shared/errors/AppError";
 import { Events } from "../../infra/typeorm/entities/Events";
 import { IEventsRepository } from "../../repositories/IEventsRepository";
 
