@@ -28,14 +28,14 @@ class Articles {
 
     @ManyToOne(() => Launches)
     @JoinColumn({ name: "launches_id", })
-    launches: Launches;
+    launchesId: Launches;
 
     @Column()
     launches_id: string;
 
     @JoinColumn({ name: "events_id" })
     @ManyToOne(() => Events)
-    events: Events;
+    eventsId: Events;
 
     @Column()
     events_id: string;

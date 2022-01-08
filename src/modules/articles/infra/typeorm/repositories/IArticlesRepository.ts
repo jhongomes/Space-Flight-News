@@ -9,14 +9,14 @@ class ArticlesRepository extends BaseRepository<Articles> implements IArticlesRe
 
     async All(): Promise<Articles[]> {
         const all = await this.repository.find({
-            relations: ["launches", "events"]
+            relations: ["launchesId", "eventsId"]
         });
         return all;
     }
 
     async findById(id: string): Promise<Articles> {
         const articles = await this.repository.findOne({ id }, {
-            relations: ["launches", "events"]
+            relations: ["launchesId", "eventsId"]
         })
 
         return articles;
