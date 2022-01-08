@@ -3,7 +3,7 @@ import { Articles } from "../../infra/typeorm/entities/Articles";
 import { IArticlesRepository } from "../../repositories/IArticlesRepository";
 
 @injectable()
-class ListArticlesUseCase {
+class GetArticlesUseCase {
     constructor(
         @inject("ArticlesRepository")
         private articlesRepository: IArticlesRepository) { }
@@ -14,4 +14,4 @@ class ListArticlesUseCase {
         return articles;
     }
 }
-export { ListArticlesUseCase }
+export { GetArticlesUseCase }
