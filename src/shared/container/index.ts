@@ -1,4 +1,5 @@
 import { container } from "tsyringe";
+import "./providers/index"
 import { ArticlesRepository } from "../../modules/articles/infra/typeorm/repositories/IArticlesRepository";
 import { IArticlesRepository } from "../../modules/articles/repositories/IArticlesRepository";
 import { EventsRepository } from "../../modules/events/infra/typeorm/repositories/EventsRepository";

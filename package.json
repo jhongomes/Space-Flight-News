@@ -1,5 +1,5 @@
 {
-    "name": "Space-Flight-News",
+    "name": "space",
     "version": "1.0.0",
     "main": "index.js",
     "repository": "https://github.com/jhongomes/Space-Flight-News.git",
@@ -11,8 +11,11 @@
         "test": "jest"
     },
     "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^10.0.0",
         "express": "^4.17.2",
         "express-async-errors": "^3.1.1",
+        "multer": "^1.4.4",
         "pg": "^8.7.1",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.6.0",
@@ -21,7 +24,9 @@
         "uuid": "^8.3.2"
     },
     "devDependencies": {
+        "@types/bcryptjs": "^2.4.2",
         "@types/express": "^4.17.13",
+        "@types/multer": "^1.4.7",
         "@types/uuid": "^8.3.4",
         "ts-node-dev": "^1.1.8"
     }
