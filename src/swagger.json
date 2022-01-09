@@ -1,0 +1,468 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Space Flight News Documentation",
+        "description": "This is an API Rent",
+        "version": "1.0.0",
+        "contact": {
+            "email": "jhonatangomes859@gmail.com"
+        }
+    },
+    "paths": {
+        "/events": {
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Create a Events",
+                "description": "Create a new Events",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "provider": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "provider": "provider name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "provider already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "List all Events",
+                "description": "List all Events",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "provider": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/events/{id}": {
+            "put": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Update Event",
+                "description": "Update evet",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Car id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "provider": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "provider": "provider name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Events"
+                ],
+                "sumary": "Delete a user",
+                "description": "Delet user",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/launches": {
+            "post": {
+                "tags": [
+                    "Launches"
+                ],
+                "summary": "Create a Launches",
+                "description": "Create a new Launche",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "provider": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "provider": "provider name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "provider already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Launches"
+                ],
+                "summary": "List all launches",
+                "description": "List all launches",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "provider": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/launches/{id}": {
+            "put": {
+                "tags": [
+                    "Launches"
+                ],
+                "summary": "Update Launche",
+                "description": "Update Launche",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Car id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "provider": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "provider": "provider name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Launches"
+                ],
+                "sumary": "Delete a launche",
+                "description": "Delet launche",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/articles": {
+            "post": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Create a Articles",
+                "description": "Create a new article",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "featured": {
+                                        "type": "boolean"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    },
+                                    "newsSite": {
+                                        "type": "string"
+                                    },
+                                    "summary": {
+                                        "type": "string"
+                                    },
+                                    "publishedAt": {
+                                        "type": "string"
+                                    },
+                                    "launches_id": {
+                                        "type": "string"
+                                    },
+                                    "events_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "featured": "featured name sample",
+                                    "url": "url name sample",
+                                    "newsSite": "newsSite name sample",
+                                    "summary": "summary name sample",
+                                    "publishedAt": "publishedAt name sample",
+                                    "launches_id": "launches_id name sample",
+                                    "events_id": "events_id id sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Launches_id and events_id not found!"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "List all launches",
+                "description": "List all launches",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "provider": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/articles/imageUrl/{id}": {
+            "patch": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Upload image",
+                "description": "Upload image",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "imageUrl": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "ok"
+                    }
+                }
+            }
+        },
+        "/articles/{id}": {
+            "put": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Update Launche",
+                "description": "Update Launche",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Car id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "provider": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "provider": "provider name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Articles"
+                ],
+                "sumary": "Delete a launche",
+                "description": "Delet launche",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "events": {
+            "type": "object",
+            "properties": {
+                "provider": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
