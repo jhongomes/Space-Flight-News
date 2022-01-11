@@ -9,7 +9,8 @@ class ArticlesRepository extends BaseRepository<Articles> implements IArticlesRe
 
     async All(): Promise<Articles[]> {
         const all = await this.repository.find({
-            relations: ["launchesId", "eventsId"]
+            relations: ["launchesId", "eventsId"],
+            take: 10
         });
         return all;
     }
