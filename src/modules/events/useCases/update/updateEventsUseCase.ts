@@ -4,7 +4,7 @@ import { Events } from "../../infra/typeorm/entities/Events";
 import { IEventsRepository } from "../../repositories/IEventsRepository";
 
 interface IRequest {
-    id: string;
+    id?: string;
     provider: string;
 }
 
