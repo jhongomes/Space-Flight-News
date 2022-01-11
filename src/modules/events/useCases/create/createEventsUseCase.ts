@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
-import { ICreateEventDTO } from "../../dtos/ICreateEventDTO";
+import { ICreateEventsDTO } from "../../dtos/ICreateEventsDTO";
 import { Events } from "../../infra/typeorm/entities/Events";
 import { IEventsRepository } from "../../repositories/IEventsRepository";
 
@@ -10,7 +10,7 @@ class CreateEventsUseCase {
         @inject("EventsRepository")
         private eventsRepository: IEventsRepository) { }
 
-    async execute({ provider }: ICreateEventDTO): Promise<Events> {
+    async execute({ provider }: ICreateEventsDTO): Promise<Events> {
         const events = new Events();
 
         if (provider == " ") throw new AppError("Fill in fields!");
@@ -21,13 +21,11 @@ class CreateEventsUseCase {
             throw new AppError("Provider Already Exists!")
         }
 
-        Object.assign(events, {
-            provider
-        });
+        Object.assign(events, { provider })
 
-        const createEvents = await this.eventsRepository.Create(events);
+        const createEvent = await this.eventsRepository.Create(events);
 
-        return createEvents;
+        return createEvent;
     }
 }
 export { CreateEventsUseCase }

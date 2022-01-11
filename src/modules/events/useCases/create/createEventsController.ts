@@ -8,7 +8,7 @@ class CreateEventsController {
 
         const createEventsUseCase = container.resolve(CreateEventsUseCase)
 
-        const event = await createEventsUseCase.execute(provider)
+        const event = await createEventsUseCase.execute({ provider })
 
         return response.status(201).json(event);
     }

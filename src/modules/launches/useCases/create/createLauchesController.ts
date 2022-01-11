@@ -8,7 +8,7 @@ class CreateLaunchesController {
 
         const createLaunchesUseCase = container.resolve(CreateLaunchesUseCase)
 
-        const launches = await createLaunchesUseCase.execute(provider)
+        const launches = await createLaunchesUseCase.execute({ provider })
 
         return response.status(201).json(launches);
     }

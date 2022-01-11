@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Space Flight News Documentation",
-        "description": "This is an API Rent",
+        "description": "This is a Space Flight News API",
         "version": "1.0.0",
         "contact": {
             "email": "jhonatangomes859@gmail.com"

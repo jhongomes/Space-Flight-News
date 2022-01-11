@@ -1,4 +1,5 @@
-export interface ICreateEventDTO {
+
+export interface ICreateEventsDTO {
     id?: string;
     provider: string;
 }
