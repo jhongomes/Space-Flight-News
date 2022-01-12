@@ -3,7 +3,7 @@
 # 📜 Sobre
 
     
- Space Flight News é uma API REST que permite outras aplicações se integrarem para publicar noticias de voos espaciais pelo mundo. A API é um code challenge da coodesh, desenvolvida em um banco relacional `postgres` em um container `docker`
+ Space Flight News é uma API REST que permite outras aplicações se integrarem para publicar noticias de voos espaciais pelo mundo. A API é um code challenge da coodesh, desenvolvida em um banco relacional `postgres` em um container `docker` 
 
 ## Cadastro de evento
 
@@ -144,7 +144,7 @@ Request url parameters example:
 
 ## Atualizar dados de um evento
 
-* `http://localhost:3333/events/{id}`
+* `PUT http://localhost:3333/events/{id}`
 
 Request url parameters example:
 
@@ -162,7 +162,7 @@ Body example:
 ```
 
 ## Remover evento
-* `http://localhost:3333/events/{id}`
+* `DELETE http://localhost:3333/events/{id}`
   
 Request url parameters example:
 
@@ -194,7 +194,7 @@ Request url parameters example:
 
 ## Atualizar dados de um lançamento
 
-* `http://localhost:3333/launhces/{id}`
+* `PUT http://localhost:3333/launhces/{id}`
 
 Request url parameters example:
 
@@ -212,7 +212,7 @@ Body example:
 ```
 
 ## Remover lançamento
-* `http://localhost:3333/launches/{id}`
+* `DELETE http://localhost:3333/launches/{id}`
   
 Request url parameters example:
 
@@ -248,7 +248,7 @@ Request url parameters example:
 
 ## Atualizar dados de um artigo
 
-* `http://localhost:3333/articles/{id}`
+* `PUT http://localhost:3333/articles/{id}`
 
 Request url parameters example:
 
@@ -270,6 +270,23 @@ Request body example:
 	 "events_id": "31fb3756-fc8c-457a-8f29-e308490990d0"
 }
 ```
+
+## Upload imageUrl articles
+
+⚠ Usar Multipart Form para upload caso opte por usar o [Insomnia](https://insomnia.rest/download)
+
+
+* `PATCH http://localhost:3333/articles/imageUrl/{id}`
+
+Request url parameters example:
+
+```
+   id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+```
+- field name: imageUrl
+- value : file
+
+<br />
 
 ## Remover artigo
 
