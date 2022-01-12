@@ -1,9 +1,9 @@
 # Back-end Challenge 🏅 2022 - Space Flight News
 
 # 📜 Sobre
-    Space Flight News é uma API REST que permite outras aplicações se integarem para publicar noticias de voos espaciais pelo mundo. A API é um code challenge da coodesh, desenvolvida em um banco relacional.
 
-<br />
+    
+ Space Flight News é uma API REST que permite outras aplicações se integrarem para publicar noticias de voos espaciais pelo mundo. A API é um code challenge da coodesh, desenvolvida em um banco relacional `postgres` em um container `docker`
 
 ## Cadastro de evento
 
@@ -66,6 +66,7 @@
 - [Express](http://expressjs.com/pt-br/)
 - [Typescript](https://docs.microsoft.com/pt-br/archive/msdn-magazine/2015/january/typescript-understanding-typescript)
 - [TypeORM](https://typeorm.io/#/)
+- [docker](https://docs.docker.com/)
 - [Jest](https://jestjs.io)
 - [VS Code](https://code.visualstudio.com/) com [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) e [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
@@ -78,7 +79,9 @@ Clean Architecture
 # 🗳 Como baixar o projeto
 
 ⚠ É necessário possuir as seguintes ferramentas instaladas em seu computador:
-- [Node.js](https://nodejs.org/en/). (Preferencialmente a versão 15.4.0)
+- [Node.js](https://nodejs.org/en/). (Preferencialmente a versão 12.17.0 ou supeiror 15.4.0)
+- [docker](https://docs.docker.com/)
+- [docker-compose](https://docs.docker.com/compose/)
 
 
 ⚠ Você pode usar tanto o [yarn](https://yarnpkg.com/) quanto o [npm]() para instalar as dependências.
@@ -99,7 +102,10 @@ $ yarn
 ou
 $ npm i
 
-# Rode o comando para criar as mirations no SQLITE.
+# Rode o comando para criar um database no docker
+$ docker-compose up -d
+
+# Rode o comando para subir as migrations no docker
 $ yarn typeorm migration:run
 ou
 $ npm run typeorm migration:run
@@ -221,9 +227,9 @@ Request url parameters example:
 Request body example:
 
  ```json
-{
-	 "featured": false,
+{    
      "title": "Busca espacial da Nasa",
+	 "featured": false,
 	 "url": "https://articles.com.br",
 	 "newsSite": "teste newsSite",
 	 "summary": "Summary teste articles",
@@ -254,8 +260,8 @@ Request body example:
 
  ```json
 {
-	 "featured": false,
      "title": "Busca espacial da Nasa em marte",
+	 "featured": false,
 	 "url": "https://articles.com.br",
 	 "newsSite": "SpaceFlightNews",
 	 "summary": "Summary teste articles",
@@ -265,9 +271,9 @@ Request body example:
 }
 ```
 
-## Remover lançamento
+## Remover artigo
 
-* `http://localhost:3333/launches/{id}` 
+* `http://localhost:3333/articles/{id}` 
   
 Request url parameters example:
 
@@ -289,4 +295,4 @@ $ npm run test
 <br />
 
 
-<p align="center">Feito por <a href="https://www.linkedin.com/in/jhonatan-gomes-de-souza-513a3a197?challengeId=AQFBHhiP4QdIHQAAAX3BFHIS5K2MDNtBpp5ivwl-velebU8gwQxxhLIz51nO-__MejbD6jfZvQdyKWzrLVGfHNChGYGu8GqyMA&submissionId=ebdd152b-6a1b-c116-99c3-2848b7bbe760" target="_blank">Jhonatan Gomes💜</a></p>
+<p align="center">Feito com 💜 por<a href="https://www.linkedin.com/in/jhonatan-gomes-de-souza-513a3a197?challengeId=AQFBHhiP4QdIHQAAAX3BFHIS5K2MDNtBpp5ivwl-velebU8gwQxxhLIz51nO-__MejbD6jfZvQdyKWzrLVGfHNChGYGu8GqyMA&submissionId=ebdd152b-6a1b-c116-99c3-2848b7bbe760" target="_blank">Jhonatan Gomes </a></p>
