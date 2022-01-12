@@ -1,5 +1,12 @@
+# Back-end Challenge 🏅 2022 - Space Flight News
+
+## 📜 Sobre
+    Space Flight News é uma API REST que permite outras aplicações se integarem para publicar noticias de voos espaciais
+
+<br />
 
 ## Cadastro de evento
+
 
 **RF**
 
@@ -103,3 +110,183 @@ ou
 $ npm run dev
 ```
 <br />
+
+# Documentação
+ A documentação pode ser acessada através: http://localhost:3333/api-docs quando o servidor local estiver ativo. 
+
+<br />
+
+
+
+# Rotas locais
+
+## Cadastrar eventos
+* `POST http://localhost:3333/events`
+
+Request body example:
+
+ ```json
+{
+	"provider": "Provider name"
+}
+ ```
+## Listar eventos
+
+Request url parameters example:
+
+* `GET http://localhost:3333/events`
+
+## Atualizar dados de um evento
+
+* `http://localhost:3333/events/{id}`
+
+Request url parameters example:
+
+```
+   id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+```
+
+Body example:
+
+```json
+{
+	"provider": "Provider events"
+}
+
+```
+
+## Remover evento
+* `http://localhost:3333/events/{id}`
+  
+Request url parameters example:
+
+```
+    id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4" 
+```
+
+<br/>
+
+
+# Lançamentos
+## Cadastrar lançamentos
+* `POST http://localhost:3333/launches`
+
+Request body example:
+
+ ```json
+{
+	"provider": "Provider name"
+}
+ ```
+## Listar lançamentos
+
+⚠ Paginação aplicada com limite de 10 registros.
+
+Request url parameters example:
+
+* `GET http://localhost:3333/launches`
+
+## Atualizar dados de um lançamento
+
+* `http://localhost:3333/launhces/{id}`
+
+Request url parameters example:
+
+```
+   id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+```
+
+Body example:
+
+```json
+{
+	"provider": "Provider events"
+}
+
+```
+
+## Remover lançamento
+* `http://localhost:3333/launches/{id}`
+  
+Request url parameters example:
+
+```
+    id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4" 
+```
+# Artigos
+## cadastrar artigos
+
+* `POST http://localhost:3333/articles`
+
+Request body example:
+
+ ```json
+{
+	 "featured": false,
+     "title": "Busca espacial da Nasa",
+	 "url": "https://articles.com.br",
+	 "newsSite": "teste newsSite",
+	 "summary": "Summary teste articles",
+	 "publishedAt": "2022-01-11T22:42:00.000Z",
+	 "launches_id": "fc57ed39-780c-49da-b010-0a731bd303a7",
+	 "events_id": "31fb3756-fc8c-457a-8f29-e308490990d0"
+}
+ ```
+## Listar artigos
+
+⚠ Paginação aplicada com limite de 10 registros.
+
+Request url parameters example:
+
+* `GET http://localhost:3333/articles`
+
+## Atualizar dados de um artigo
+
+* `http://localhost:3333/articles/{id}`
+
+Request url parameters example:
+
+```
+   id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+```
+
+Request body example:
+
+ ```json
+{
+	 "featured": false,
+     "title": "Busca espacial da Nasa em marte",
+	 "url": "https://articles.com.br",
+	 "newsSite": "SpaceFlightNews",
+	 "summary": "Summary teste articles",
+	 "publishedAt": "2022-01-11T22:42:00.000Z",
+	 "launches_id": "fc57ed39-780c-49da-b010-0a731bd303a7",
+	 "events_id": "31fb3756-fc8c-457a-8f29-e308490990d0"
+}
+```
+
+## Remover lançamento
+
+* `http://localhost:3333/launches/{id}` 
+  
+Request url parameters example:
+
+```
+    id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4" 
+```
+<br />
+
+# Testes
+[Jest](https://jestjs.io/) Foi utilizado para os testes, para rodá-los execute:
+```
+$ yarn test
+```
+Ou:
+```
+$ npm run test
+```
+
+<br />
+
+
+<p align="center">Feito por <a href="https://www.linkedin.com/in/jhonatan-gomes-de-souza-513a3a197?challengeId=AQFBHhiP4QdIHQAAAX3BFHIS5K2MDNtBpp5ivwl-velebU8gwQxxhLIz51nO-__MejbD6jfZvQdyKWzrLVGfHNChGYGu8GqyMA&submissionId=ebdd152b-6a1b-c116-99c3-2848b7bbe760" target="_blank">Jhonatan Gomes💜</a></p>

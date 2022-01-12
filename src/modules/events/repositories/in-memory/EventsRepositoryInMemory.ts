@@ -1,4 +1,4 @@
-import { ICreateEventDTO } from "../../dtos/ICreateEventDTO";
+import { ICreateEventsDTO } from "../../dtos/ICreateEventsDTO";
 import { Events } from "../../infra/typeorm/entities/Events";
 import { IEventsRepository } from "../IEventsRepository";
 
@@ -23,7 +23,7 @@ class EventsRepositoryInMemory implements IEventsRepository {
     async Create({
         id,
         provider
-    }: ICreateEventDTO): Promise<Events> {
+    }: ICreateEventsDTO): Promise<Events> {
         const events = new Events();
 
         Object.assign(events, {
