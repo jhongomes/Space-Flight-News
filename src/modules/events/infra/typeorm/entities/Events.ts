@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid"
+import { Articles } from "../../../../articles/infra/typeorm/entities/Articles";
 
 @Entity("events")
 class Events {
@@ -8,6 +9,9 @@ class Events {
 
     @Column()
     provider: string;
+
+    @OneToMany(() => Articles, articles => articles.eventsId)
+    articlesId: Articles;
 
     @CreateDateColumn()
     created_at: Date;

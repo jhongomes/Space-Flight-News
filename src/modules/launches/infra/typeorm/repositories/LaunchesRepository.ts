@@ -8,7 +8,10 @@ class LaunchesRepository extends BaseRepository<Launches> implements ILaunchesRe
     }
 
     async All(): Promise<Launches[]> {
-        const all = await this.repository.find();
+        const all = await this.repository.find({
+            relations: ["articlesID"],
+            take: 10,
+        });
         return all;
     }
 

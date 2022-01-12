@@ -8,7 +8,11 @@ class EventsRepository extends BaseRepository<Events> implements IEventsReposito
     }
 
     async All(): Promise<Events[]> {
-        const all = await this.repository.find();
+        const all = await this.repository.find({
+            relations: ["articlesId"],
+            take: 10
+        });
+
         return all;
     }
 
