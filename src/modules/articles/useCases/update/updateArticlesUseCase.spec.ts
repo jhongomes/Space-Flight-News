@@ -37,6 +37,7 @@ describe("Delete a article", () => {
         })
 
         await createArticlesUseCase.execute({
+            title: "Pesquisa espacial",
             id: "29d2b86a-0679-11ec-9a03-0242ac130003",
             featured: false,
             url: "http://articlesexemple.com",
@@ -48,6 +49,7 @@ describe("Delete a article", () => {
         });
 
         const updateArticle = await updateArticlesUseCase.execute({
+            title: "Pesquisa espacial",
             id: "29d2b86a-0679-11ec-9a03-0242ac130003",
             featured: false,
             url: "http://articlesexemple.com",
@@ -58,6 +60,5 @@ describe("Delete a article", () => {
             events_id: "29d2b86a-0679-11ec-9a03-0242ac130003"
         })
         expect(updateArticle.newsSite).toBe("newsSite exemple")
-        console.log(updateArticle)
     });
 })

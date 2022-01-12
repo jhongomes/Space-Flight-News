@@ -274,6 +274,9 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
                                     "featured": {
                                         "type": "boolean"
                                     },
@@ -297,7 +300,8 @@
                                     }
                                 },
                                 "example": {
-                                    "featured": "featured name sample",
+                                    "title": "Pesquisa espacial da nasa",
+                                    "featured": false,
                                     "url": "url name sample",
                                     "newsSite": "newsSite name sample",
                                     "summary": "summary name sample",
@@ -322,8 +326,8 @@
                 "tags": [
                     "Articles"
                 ],
-                "summary": "List all launches",
-                "description": "List all launches",
+                "summary": "List all Articles",
+                "description": "List all Articles",
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -334,14 +338,207 @@
                                     "items": {
                                         "type": "object",
                                         "properties": {
-                                            "provider": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "featured": {
+                                                "type": "boolean"
+                                            },
+                                            "url": {
+                                                "type": "string"
+                                            },
+                                            "newsSite": {
+                                                "type": "string"
+                                            },
+                                            "summary": {
+                                                "type": "string"
+                                            },
+                                            "publishedAt": {
+                                                "type": "string"
+                                            },
+                                            "launches_id": {
+                                                "type": "string"
+                                            },
+                                            "events_id": {
                                                 "type": "string"
                                             }
+                                        },
+                                        "example": {
+                                            "title": "Pesquisa espacial da nasa",
+                                            "featured": false,
+                                            "url": "url name sample",
+                                            "newsSite": "newsSite name sample",
+                                            "summary": "summary name sample",
+                                            "publishedAt": "publishedAt name sample",
+                                            "launches_id": "launches_id name sample",
+                                            "events_id": "events_id id sample"
                                         }
                                     }
                                 }
                             }
                         }
+                    }
+                }
+            }           
+        },
+         "/articles/{id}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "List all Articles",
+                "description": "List all Articles",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "featured": {
+                                                "type": "boolean"
+                                            },
+                                            "url": {
+                                                "type": "string"
+                                            },
+                                            "newsSite": {
+                                                "type": "string"
+                                            },
+                                            "summary": {
+                                                "type": "string"
+                                            },
+                                            "publishedAt": {
+                                                "type": "string"
+                                            },
+                                            "launches_id": {
+                                                "type": "string"
+                                            },
+                                            "events_id": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "example": {
+                                            "title": "Pesquisa espacial da nasa",
+                                            "featured": false,
+                                            "url": "url name sample",
+                                            "newsSite": "newsSite name sample",
+                                            "summary": "summary name sample",
+                                            "publishedAt": "publishedAt name sample",
+                                            "launches_id": "launches_id name sample",
+                                            "events_id": "events_id id sample"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Update Article",
+                "description": "Update Article",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "featured": {
+                                        "type": "boolean"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    },
+                                    "newsSite": {
+                                        "type": "string"
+                                    },
+                                    "summary": {
+                                        "type": "string"
+                                    },
+                                    "publishedAt": {
+                                        "type": "string"
+                                    },
+                                    "launches_id": {
+                                        "type": "string"
+                                    },
+                                    "events_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "title": "Pesquisa espacial da nasa em marte",
+                                    "featured": false,
+                                    "url": "url name sample",
+                                    "newsSite": "newsSite name sample",
+                                    "summary": "summary name sample",
+                                    "publishedAt": "publishedAt name sample",
+                                    "launches_id": "launches_id name sample",
+                                    "events_id": "events_id id sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Articles"
+                ],
+                "sumary": "Delete a article",
+                "description": "Delet article",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     }
                 }
             }
@@ -385,71 +582,6 @@
                 "responses": {
                     "204": {
                         "description": "ok"
-                    }
-                }
-            }
-        },
-        "/articles/{id}": {
-            "put": {
-                "tags": [
-                    "Articles"
-                ],
-                "summary": "Update Launche",
-                "description": "Update Launche",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Car id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "provider": {
-                                        "type": "string"
-                                    }
-                                },
-                                "example": {
-                                    "provider": "provider name sample"
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "Created"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "Articles"
-                ],
-                "sumary": "Delete a launche",
-                "description": "Delet launche",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "404": {
-                        "description": "Not Found"
                     }
                 }
             }

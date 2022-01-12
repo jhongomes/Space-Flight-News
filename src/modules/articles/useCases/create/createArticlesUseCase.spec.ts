@@ -11,6 +11,7 @@ describe("Create a articles", () => {
     });
     it("should be able to create a new article", async () => {
         const article = await createArticlesUseCase.execute({
+            title: "Pesquisa espacial",
             featured: false,
             url: "http://articlesexemple.com",
             newsSite: "newsSite exemple",

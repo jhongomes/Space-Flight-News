@@ -15,6 +15,7 @@ describe("Delete a article", () => {
 
     it("Should be able to exclude one article", async () => {
         const article = await createArticlesUseCase.execute({
+            title: "Pesquisa espacial",
             id: "29d2b86a-0679-11ec-9a03-0242ac130003",
             featured: false,
             url: "http://articlesexemple.com",

@@ -9,6 +9,10 @@ class Articles {
     id: string;
 
     @Column()
+    title: string;
+
+
+    @Column()
     featured: boolean;
 
     @Column()

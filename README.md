@@ -1,7 +1,7 @@
 # Back-end Challenge 🏅 2022 - Space Flight News
 
-## 📜 Sobre
-    Space Flight News é uma API REST que permite outras aplicações se integarem para publicar noticias de voos espaciais
+# 📜 Sobre
+    Space Flight News é uma API REST que permite outras aplicações se integarem para publicar noticias de voos espaciais pelo mundo. A API é um code challenge da coodesh, desenvolvida em um banco relacional.
 
 <br />
 

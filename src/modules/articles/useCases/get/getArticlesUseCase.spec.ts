@@ -14,6 +14,7 @@ describe("List all articles", () => {
     });
     it("Should be able to list all article", async () => {
         const article = await createArticlesUseCase.execute({
+            title: "Pesquisa espacial",
             featured: false,
             url: "http://articlesexemple.com",
             newsSite: "newsSite exemple",

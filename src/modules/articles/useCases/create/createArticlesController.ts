@@ -4,11 +4,12 @@ import { CreateArticlesUseCase } from "./createArticlesUseCase";
 
 class CreateArticlesController {
     async handle(request: Request, response: Response): Promise<Response> {
-        const { featured, url, newsSite, summary, publishedAt, launches_id, events_id } = request.body;
+        const { title, featured, url, newsSite, summary, publishedAt, launches_id, events_id } = request.body;
 
         const createArticlesUseCase = container.resolve(CreateArticlesUseCase)
 
         const article = await createArticlesUseCase.execute({
+            title,
             featured,
             url,
             newsSite,

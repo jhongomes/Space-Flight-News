@@ -10,6 +10,7 @@ class CreateArticlesUseCase {
         private articlesRepository: IArticlesRepository) { }
 
     async execute({
+        title,
         featured,
         url,
         newsSite,
@@ -21,6 +22,7 @@ class CreateArticlesUseCase {
         const articles = new Articles();
 
         Object.assign(articles, {
+            title,
             featured,
             url,
             newsSite,

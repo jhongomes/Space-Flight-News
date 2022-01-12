@@ -1,6 +1,6 @@
 import { LaunchesRepositoryInMemory } from "../../repositories/in-memory/LaunchesRepositoryInMemory";
 import { CreateLaunchesUseCase } from "../create/createLaunchesUseCase";
-import { UpdateLaunchesUseCase } from "./updateEventsUseCase";
+import { UpdateLaunchesUseCase } from "./updateLaunchesUseCase";
 
 let createLaunchesUseCase: CreateLaunchesUseCase;
 let launchesRepositoryInMemory: LaunchesRepositoryInMemory;

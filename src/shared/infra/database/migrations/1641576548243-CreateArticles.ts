@@ -13,6 +13,10 @@ export class CreateArticles1641576548243 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
+                        name: "title",
+                        type: "varchar"
+                    },
+                    {
                         name: "featured",
                         type: "boolean",
                     },

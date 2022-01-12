@@ -18,6 +18,7 @@ class UpdateArticlesUseCase {
 
     async execute({
         id,
+        title,
         featured,
         url,
         newsSite,
@@ -38,6 +39,7 @@ class UpdateArticlesUseCase {
 
         if (!eventsId) throw new AppError("Event does not exists!")
 
+        article.title = title;
         article.featured = featured;
         article.url = url;
         article.newsSite = newsSite;

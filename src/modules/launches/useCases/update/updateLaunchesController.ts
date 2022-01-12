@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { UpdateLaunchesUseCase } from "./updateEventsUseCase";
+import { UpdateLaunchesUseCase } from "./updateLaunchesUseCase";
 
 class UpdateLaunchesController {
     async handle(request: Request, response: Response): Promise<Response> {

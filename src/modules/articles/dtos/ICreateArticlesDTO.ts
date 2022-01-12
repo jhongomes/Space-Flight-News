@@ -1,6 +1,7 @@
 
 export interface ICreateArticlesDTO {
     id?: string;
+    title: string;
     featured: boolean;
     url: string;
     imageUrl?: string;
